@@ -2,7 +2,7 @@ name: Github Action
 
 on:
     push:
-        branches: [developp]
+        branches: [develop]
 
 jobs:
     build:
