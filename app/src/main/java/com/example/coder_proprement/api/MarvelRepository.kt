@@ -27,7 +27,7 @@ private class MarvelRepositoryImpl: MarvelRepository {
     private val service = ApiClient.apiService
 
     override suspend fun getAllComics(time: String, apikey:String, hash: String): Call<MarvelResponse<Comic>> {
-        return service.getAllComics(time, apikey, hash)
+        return service.getAllComics(time, apikey, hash, "")
     }
 
     override suspend fun getComicById(id: String, time: String, apikey:String, hash: String): Call<MarvelResponse<Comic>> {

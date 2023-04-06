@@ -12,7 +12,7 @@ interface MarvelRetrofitInterface {
     //ts={time}&apikey={key}&hash={hash}
     @GET("/v1/public/comics")
     fun getAllComics (@Query("ts") time: String, @Query("apikey") apikey:String,
-                      @Query("hash") hash: String):
+                      @Query("hash") hash: String, @Query("offset") offset: String):
             Call<MarvelResponse<Comic>>
 
     @GET("/v1/public/comics/{comics_id}")
