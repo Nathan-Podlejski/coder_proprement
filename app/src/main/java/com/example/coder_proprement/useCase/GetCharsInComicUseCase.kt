@@ -2,6 +2,7 @@ package fr.iem.useCase
 
 import com.example.coder_proprement.BuildConfig.MARVEL_PRIVATE_API_KEY
 import com.example.coder_proprement.BuildConfig.MARVEL_PUBLIC_API_KEY
+import com.example.coder_proprement.api.MarvelRepository
 import fr.iem.api.ApiClient
 import fr.iem.extension.md5
 import fr.iem.model.MarvelCharacter
@@ -22,7 +23,7 @@ class GetCharsInComicUseCase {
 
             val hash = (ts + privateKey + publicKey).md5()
 
-            ApiClient.apiService.getCharsInComic(id.toString() ,ts, publicKey, hash).execute().body()
+            MarvelRepository.newInstance().getCharsInComic(id.toString() ,ts, publicKey, hash).execute().body()
         }
     }
 }

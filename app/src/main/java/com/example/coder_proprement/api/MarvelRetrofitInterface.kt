@@ -10,11 +10,6 @@ import retrofit2.http.Query
 
 interface MarvelRetrofitInterface {
     //ts={time}&apikey={key}&hash={hash}
-    @GET("/v1/public/characters/1009368?")
-    fun getChar (@Query("ts") time: String, @Query("apikey") apikey:String,
-                 @Query("hash") hash: String):
-            Call<MarvelResponse<MarvelCharacter>>
-
     @GET("/v1/public/comics")
     fun getAllComics (@Query("ts") time: String, @Query("apikey") apikey:String,
                       @Query("hash") hash: String):
